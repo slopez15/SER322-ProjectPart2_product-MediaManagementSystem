@@ -41,7 +41,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a class="active" href="index.php">Home</a></li>
+        <li class="active"><a class="active" href="index.php">Home</a></li>
         <li><a href="about.php">About</a></li>
         <li><a href="orders.php">Orders</a></li>
       </ul>
@@ -87,9 +87,25 @@
                     <br>
                 </address>
                 <address>
+                    <b>Talab Hussein - Cheif of Staff</b><br>
                     <abbr title="Phone">P:</abbr>(123) 456-7890
                     <br>
-                    <abbr title="Email">E:</abbr> <a href="mailto:#">talab_hussein@asu.edu</a>
+                    <abbr title="Email">E:</abbr> 
+                    <a href="mailto:#">talab_hussein@asu.edu</a>
+                    
+                    <br>
+                    <b>Mike Zaragoza - President</b><br>
+                    <abbr title="Phone">P:</abbr>(456) 456-7890
+                    <br>
+                    <abbr title="Email">E:</abbr> 
+                    <a href="mailto:#">mazara2@asu.edu</a>
+                    
+                    <br>
+                    <b>Saul Lopez - Prime Minister</b><br>
+                    <abbr title="Phone">P:</abbr>(789) 456-7890
+                    <br>
+                    <abbr title="Email">E:</abbr> 
+                    <a href="mailto:#">slopez15@asu.edu</a>
                 </address>
             </div>
         </div>
