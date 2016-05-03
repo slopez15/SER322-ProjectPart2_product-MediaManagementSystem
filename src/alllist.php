@@ -18,7 +18,7 @@ displayLibrary($conn);
 $conn->close();
 
 function displayLibrary($conn){
-	$sql = "SELECT * FROM digitallibrary";
+	$sql = "SELECT * FROM mediadescription";//changed from digitalLibrary
 
 	$result = $conn->query($sql);
 
@@ -26,20 +26,27 @@ function displayLibrary($conn){
 		while($row = $result->fetch_assoc()){
 			echo "<table border=1>
 			<tr>
-			<th>Media ID</th>
 			<th>ISBN</th>
 			<th>Title</th>
+			<th>Type</th>
+			<th>Category</th>
+			<th>Year</th>
+			<th>Author</th>
+			<th>Cost</th>
 			</tr>";
 			echo "<tr>";
-			echo "<td>" . $row['MediaID'] . "</td>";
 			echo "<td>" . $row['ISBN'] . "</td>";
 			echo "<td>" . $row['Title'] . "</td>";
+			echo "<td>" . $row['Type'] . "</td>";
+			echo "<td>" . $row['Category'] . "</td>";
+			echo "<td>" . $row['Year'] . "</td>";
+			echo "<td>" . $row['Author'] . "</td>";
+			echo "<td>" . $row['Cost'] . "</td>";
 			echo "</tr>";
 			echo "</table>";
 			
 		}
 	}
 }
-
 
 ?>
