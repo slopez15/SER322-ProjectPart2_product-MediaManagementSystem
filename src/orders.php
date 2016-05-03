@@ -8,6 +8,12 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   <style>
+    body{
+     background: url("http://www.designbolts.com/wp-content/uploads/2014/03/Light-Blue-blur-background1.jpg");
+  
+    background-repeat: no-repeat;
+    background-size: 200%;
+  }
     /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
       margin-bottom: 0;
