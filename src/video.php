@@ -70,6 +70,32 @@
 <div class="container-fluid text-center">    
   <div class="row content">
     <div class="col-sm-2 sidenav">
+    <div class="filters">
+      <div class="col-lg-6">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search for...">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Go!</button>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+  <br><br>
+        <h1>filters</h1>
+        <a class="btn btn-default btn-lg" href="#">Less than $5</a>
+        <a class="btn btn-default btn-lg" href="#">More than $5</a>
+        <br><br>
+        <div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Category
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a href="music.php">Music</a></li>
+    <li><a href="video.php">Video</a></li>
+    <li><a href="ebook.php">Ebook</a></li>
+  </ul>
+</div>
+      </div>
     </div>
     <div class="col-sm-8 text-left"> 
       <h1>Video</h1>

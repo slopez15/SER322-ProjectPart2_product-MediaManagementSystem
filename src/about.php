@@ -70,21 +70,19 @@
 <div class="container-fluid text-center">    
   <div class="row content">
     <div class="col-sm-2 sidenav">
-      <div class="well">
-        <p>Fav</p>
-      </div>
+      <h3>Follow Team 10 on the web</h3>
+      <a href="https://github.com/cst316/spring16project-Fortran" class="button">GitHub</a>
     </div>
     <div class="col-sm-8 text-left"> 
       <h1>About Us!</h1>
       <p>This is about us page.</p>
       <hr>
-      <h3>About Page</h3>
-      <p>About us</p>
+      <h3>About App</h3>
+      <p>SER322 Project brought to the hottest media to keep you entertained and provide you with an ultimate experience. Built by Team 10</p>
+      <p>This is an online store where customers can view music, video, ebooks and add them to cart for checkout.
     </div>
     <div class="col-sm-2 sidenav">
-      <div class="well">
-        <p>Search</p>
-      </div>
+      
     </div>
   </div>
 </div>

@@ -85,8 +85,16 @@
     <div class="col-sm-2 sidenav">
       <div class="well">
         <p>Search</p>
+
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Search for...">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Go!</button>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
       </div>
-    </div>
+    
   </div>
 </div>
 

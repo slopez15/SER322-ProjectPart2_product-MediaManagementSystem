@@ -29,7 +29,7 @@
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse navbar-fixed-top ">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -41,7 +41,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a class="active" href="index.php">Home</a></li>
+        <li><a class="active" href="index.php">Home</a></li>
         <li><a href="about.php">About</a></li>
         <li><a href="orders.php">Orders</a></li>
       </ul>
@@ -58,7 +58,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <br><br>
+                    <br><br><br><br><br>
                     <h1 class="tagline">Welcome to our Online Store!</h1>
                 </div>
             </div>
@@ -73,13 +73,13 @@
         <div class="row">
             <div class="col-sm-8">
                 <h2>What We Do</h2>
-                <p>Welcome to our online store. Here you can find and buy the latest media ranging from movies to music to games for the HOTTEST prices. Brought to you by Team 10.</p>
+                <p>Welcome to our online store. Here you can find and buy the latest media ranging from movies to music to games for the HOTTEST prices. Brought to you by Team 10. Get our hands on the latest media (Music albums, Movies, Ebooks, Games). You ask for it... We bring it to you for a 5 star entertainment system.</p>
                 <p>
                     <a class="btn btn-default btn-lg" href="about.php">Learn More &raquo;</a>
                 </p>
             </div>
             <div class="col-sm-4">
-                <h2>Contact Us</h2>
+                <h2>We love to hear your feedback</h2>
                 <address>
                     <strong>Online Store</strong>
                     <br>8723 S Avery St
@@ -87,25 +87,9 @@
                     <br>
                 </address>
                 <address>
-                    <b>Talab Hussein - Cheif of Staff</b><br>
                     <abbr title="Phone">P:</abbr>(123) 456-7890
                     <br>
-                    <abbr title="Email">E:</abbr> 
-                    <a href="mailto:#">talab_hussein@asu.edu</a>
-                    
-                    <br>
-                    <b>Mike Zaragoza - President</b><br>
-                    <abbr title="Phone">P:</abbr>(456) 456-7890
-                    <br>
-                    <abbr title="Email">E:</abbr> 
-                    <a href="mailto:#">mazara2@asu.edu</a>
-                    
-                    <br>
-                    <b>Saul Lopez - Prime Minister</b><br>
-                    <abbr title="Phone">P:</abbr>(789) 456-7890
-                    <br>
-                    <abbr title="Email">E:</abbr> 
-                    <a href="mailto:#">slopez15@asu.edu</a>
+                    <abbr title="Email">E:</abbr> <a href="mailto:#">talab_hussein@asu.edu</a>
                 </address>
             </div>
         </div>
@@ -144,6 +128,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <p>Copyright &copy; Online Store 2016</p>
+                </div>
+                <div class="col-lg-12">
+                	<p>Talab Hussein</p>
+                	<p>Mike Zaragoza</p>
+                	<p>Saul Lopze</p>
                 </div>
             </div>
             <!-- /.row -->
