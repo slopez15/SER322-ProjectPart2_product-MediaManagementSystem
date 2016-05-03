@@ -82,7 +82,7 @@
       <h3>Media List</h3>
       <p>List of media available</p>
 
-      <?php include 'alllist.php';>
+      <?php include 'alllist.php';?>
     </div>
     <div class="col-sm-2 sidenav">
       <div class="well">
