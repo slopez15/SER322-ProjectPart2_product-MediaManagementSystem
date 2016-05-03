@@ -58,7 +58,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <br><br>
+                    <br><br><br><br><br>
                     <h1 class="tagline">Welcome to our Online Store!</h1>
                 </div>
             </div>
