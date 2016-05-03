@@ -130,9 +130,9 @@
                     <p>Copyright &copy; Online Store 2016</p>
                 </div>
                 <div class="col-lg-12">
-                	<p>Talab Hussein</p>
-                	<p>Mike Zaragoza</p>
-                	<p>Saul Lopze</p>
+                	<p>Talab Hussein - Website Designer</p>
+                	<p>Mike Zaragoza - Backend Developer</p>
+                	<p>Saul Lopez - Backend Developer</p>
                 </div>
             </div>
             <!-- /.row -->
