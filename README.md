@@ -1,5 +1,12 @@
-# WebApp-ContentManagementSystem
-This is a a content management system web application. It has a public area and admin area(Manage Content). Follows Amazon & ebay style.
+<html>
+    <head>
+    </head>
+    <body>
+        <h1> WebApp-ContentManagementSystem </h1>
+        <p>This is a a content management system web application. It has a public area and admin area(Manage Content). Follows Amazon & ebay style.</p>
+    </body>
+</html>
+
 Tech Stack | Description
     --- | ---
     HTML | to add content media images and description
