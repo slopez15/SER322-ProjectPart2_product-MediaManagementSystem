@@ -26,6 +26,7 @@ function displayLibrary($conn){
 		while($row = $result->fetch_assoc()){
 			echo "<table border=1>
 			<tr>
+			<th>Selected</th>
 			<th>ISBN</th>
 			<th>Title</th>
 			<th>Type</th>
@@ -35,6 +36,7 @@ function displayLibrary($conn){
 			<th>Cost</th>
 			</tr>";
 			echo "<tr>";
+			echo "<td> <input type="checkbox"></td>";
 			echo "<td>" . $row['ISBN'] . "</td>";
 			echo "<td>" . $row['Title'] . "</td>";
 			echo "<td>" . $row['Type'] . "</td>";

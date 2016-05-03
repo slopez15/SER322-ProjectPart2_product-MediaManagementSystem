@@ -70,6 +70,11 @@
 <div class="container-fluid text-center">    
   <div class="row content">
     <div class="col-sm-2 sidenav">
+      <div class="filters">
+        <h1>filters</h1>
+        <a type="button" class="btn btn-lrg" href="#">Less than $1</a>
+        <a type="button" class="btn btn-lrg" href="#">More than $1</a>
+      </div>
     </div>
     <div class="col-sm-8 text-left"> 
       <h1>Music</h1>
