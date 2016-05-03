@@ -20,6 +20,9 @@ function displayVideo($conn){
 	$result = $conn->query($sql);
 
 	if($result->num_rows > 0){
+		?>
+		<form action = "musiclist.php" method = "post">
+		<?php
 		while($row = $result->fetch_assoc()){
 			echo "<table border=1>
 			<tr>
@@ -31,6 +34,7 @@ function displayVideo($conn){
 			<th>Author</th>
 			<th>Cost</th>
 			</tr>";
+			
 			echo "<tr>";
 			echo "<td>" . $row['ISBN'] . "</td>";
 			echo "<td>" . $row['Title'] . "</td>";
@@ -40,11 +44,13 @@ function displayVideo($conn){
 			echo "<td>" . $row['Author'] . "</td>";
 			echo "<td>" . $row['Cost'] . "</td>";
 			echo "</tr>";
+			?>
+			<input type = "checkbox" name = "musicList[]" value = "">
+			</form>
+			<?php
 			echo "</table>";
+			
 		}
 	}
 }
-
-
-
 ?>
