@@ -24,6 +24,19 @@ function displayLibrary($conn){
 
 	if($result->num_rows > 0){
 		while($row = $result->fetch_assoc()){
+			echo "<table border=1">
+			<tr>
+			<th>Media ID</th>
+			<th>ISBN</th>
+			<th>Title</th>
+			</tr>"
+			echo "<tr>";
+			echo "<td>" . $row['MediaID'] . "</td>";
+			echo "<td>" . $row['ISBN'] . "</td>";
+			echo "<td>" . $row['Title'] . "</td>";
+			echo "</tr>";
+			echo "</table>";
+			
 			echo "MediaID " . $row["MediaID"] . "ISBN " . $row["ISBN"] .
 			"Title " . $row["Title"] . 
 			  "<br>";
