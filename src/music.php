@@ -57,7 +57,7 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="index.php">Home</a></li>
-        <li class="active"><a href="about.php">About</a></li>
+        <li><a href="about.php">About</a></li>
         <li><a href="#">Orders</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -72,8 +72,8 @@
     <div class="col-sm-2 sidenav">
       <div class="filters">
         <h1>filters</h1>
-        <a type="button" class="btn btn-lrg" href="#">Less than $1</a>
-        <a type="button" class="btn btn-lrg" href="#">More than $1</a>
+        <a class="btn btn-default btn-lg" href="#">Less than $1</a>
+        <a class="btn btn-default btn-lg" href="#">More than $1</a>
       </div>
     </div>
     <div class="col-sm-8 text-left"> 
