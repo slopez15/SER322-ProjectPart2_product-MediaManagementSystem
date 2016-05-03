@@ -119,8 +119,8 @@ CREATE TABLE IF NOT EXISTS `logininformation` (
 --
 
 INSERT INTO `logininformation` (`Username`, `Password`, `CID`) VALUES
-('saul', 'sauceman', 1),
-('mike', 'master', 12),
+('saul123', 'sauceman', 1),
+('mike666', 'master', 12),
 ('fido2', 'f', 123),
 ('fido@yum.com', 'f', 1234);
 
