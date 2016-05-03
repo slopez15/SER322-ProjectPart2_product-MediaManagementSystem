@@ -80,11 +80,7 @@
       <h3>Media Order List</h3>
       <p>List of Customers and Orders available</p>
 
-      //php query file(underconstruction)
-      <?php
-          //SELECT * FROM customers, orders 
-
-      ?>
+      <?php include 'orderslist.php';?>
     </div>
     <div class="col-sm-2 sidenav">
       <div class="well">
