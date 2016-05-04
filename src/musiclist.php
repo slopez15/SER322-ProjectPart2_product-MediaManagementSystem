@@ -12,7 +12,7 @@ function handleEvent($arr){
 		$result = $_POST['musiclist'];//contains all that have been checked right?
 		//contains 
 		if(!empty($result)){
-			echo 'we in';
+		
 			$count = count($result);
 			foreach($_POST['musiclist'] as $selected){
 				DelQuery($selected);
