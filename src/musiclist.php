@@ -5,16 +5,76 @@ displayVideo($conn);
 
 $conn->close();
 
+//global variable
+function handleEvent($arr){
+	//create an array with all the ISBN
+	//problem is when submit button is called this needs to be called
+	//echo 'Functioned Called';
+	if(isset($_POST['submit'])){
+		
+		if(isset($_POST['musiclist'])){
+		$result = $_POST['musiclist'];//contains all that have been checked right?
+		//contains 
+		if(!empty($result)){
+		
+			$count = count($result);
+			foreach($_POST['musiclist'] as $selected){
+				DelQuery($selected);
+			}
+		}	
+		/*
+		$arrSize = count($arr);
+		for($y = 0; $y < $arrSize; $y++){
+			echo $arr[$y] . "<br>";
+			DelQuery($arr[$y],$conn);
+		}
+		*/
+		}
+		else{
+			?>
+			<script src = "jquery-1.12.3.min.js"></script>
+			<script>
+			jQuery(document).ready(function($){
+			alert('Please Select an Item','Error');
+			});
+			</script>
+			<?php
+		}
+	}
+}
+/**
+*Deletes a digitalMedia from the Library using
+*ISBN as a key 
+**/
+
+function DelQuery($ISBN){
+
+	$host = '127.0.0.1:3306';
+	$user = 'root';
+	$password = 'pleaseconnect123';
+	$dbName = 'shoppingcart12';
+	$port = 3306;
+
+	$conn = new mysqli($host,$user,$password,$dbName);
+
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	} 
+	$query = "DELETE FROM digitallibrary WHERE ISBN = $ISBN";
+	$result = $conn->query($query);
+	$conn->close();
+}
+
 function displayVideo($conn){
 	$sql = "SELECT * FROM mediadescription WHERE Type = 'Music'";//changed from digitalLibrary
-
 	$result = $conn->query($sql);
-
+	$counter = 0;
 	if($result->num_rows > 0){
 		?>
-		<form action = "musiclist.php" method = "post">
+		<form action = "<?php echo $_SERVER['PHP_SELF'];?>" method = "POST">
 		<?php
 		while($row = $result->fetch_assoc()){
+			echo "<br>";
 			echo "<table border=1>
 			<tr>
 			<th>ISBN</th>
@@ -25,9 +85,15 @@ function displayVideo($conn){
 			<th>Author</th>
 			<th>Cost</th>
 			</tr>";
+			?>
 			
+			<input type = "checkbox" name = "musiclist[]" value = "<?php echo $row['ISBN'];?>">Add To Cart</input>
+			</form>
+			<?php
 			echo "<tr>";
 			echo "<td>" . $row['ISBN'] . "</td>";
+			global $isbnArr;
+			$isbnArr[$counter] = $row['ISBN'];
 			echo "<td>" . $row['Title'] . "</td>";
 			echo "<td>" . $row['Type'] . "</td>";
 			echo "<td>" . $row['Category'] . "</td>";
@@ -36,12 +102,13 @@ function displayVideo($conn){
 			echo "<td>" . $row['Cost'] . "</td>";
 			echo "</tr>";
 			?>
-			<input type = "checkbox" name = "musicList[]" value = "">
-			</form>
 			<?php
 			echo "</table>";
-			
+			++$counter;
 		}
 	}
+	//used to be isbnArr
+	//creative here this the problem
+	return $isbnArr;
 }
 ?>

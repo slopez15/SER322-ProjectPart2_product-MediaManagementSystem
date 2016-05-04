@@ -43,6 +43,7 @@
       .row.content {height:auto;}
     }
   </style>
+  <script type="text/JavaScript" src="js/script.js"></script>
 </head>
 <body>
 
@@ -80,7 +81,7 @@
       <form action= "loginCookie.php" method="POST" class="form-signin">
         <h2 class="form-signin-heading">Please sign in</h2>
         <label for="inputEmail" class="sr-only">Email address</label>
-        <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <input name="email" type="email" id="inputEmail" class="form-control" placeholder="Username" required autofocus>
 
         <label for="inputPassword" class="sr-only">Password</label>
         <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" required>
@@ -90,11 +91,7 @@
             <input type="checkbox" value="remember-me"> Remember me
           </label>
         </div>
-
-        <div class="signup">
-        </div>
-
-        <button type="submit" name = "sign_in" class="btn btn-lg btn-primary btn-block" >Sign in</button>
+        <input type="submit" name = "sign_in" value="Log In" class="btn btn-lg btn-primary btn-block" onClick="clicked();" />
       </form>
 
     </div> <!-- /container -->

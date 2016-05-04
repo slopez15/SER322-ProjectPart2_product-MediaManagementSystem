@@ -97,6 +97,7 @@
           <hr>
           <h3>ebook list</h3>
           <?php include 'ebooklist.php';?>
+		  <input type = "submit" name = "submit" value = "Purchase">
         </div>
         <div class="col-sm-2 sidenav">
           <div class="well">

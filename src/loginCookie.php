@@ -5,7 +5,7 @@ if(isset($_POST['sign_in']))
 {
 //check if login info exists in loginInfo table, else print "not in database, added you to database using entered email and password"
   $str=$_POST['sign_in'];
-  echo $str;  
+  echo $str .= "<br/>"; //value=Log In 
   //email
   if (empty($POST['inputEmail'])){
   		echo "email missing<br/>";
