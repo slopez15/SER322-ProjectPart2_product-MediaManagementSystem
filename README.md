@@ -2,7 +2,8 @@
     <head>
     </head>
     <body>
-        <h1> WebApp-ContentManagementSystem </h1>
+        <h1> WebApp-MediaManagementSystem </h1>
+        ![ScreenShot](https://github.com/TalabH/WebApp-MediaManagementSystem/blob/master/imgs/banner.png)
         <p>This is a a content management system web application. It has a public area and admin area(Manage Content). Follows Amazon & ebay style.</p>
     </body>
 </html>
