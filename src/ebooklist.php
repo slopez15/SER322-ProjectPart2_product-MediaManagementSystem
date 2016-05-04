@@ -18,6 +18,16 @@ function handleEvent($arr){
 			}
 		}	
 		}
+		else{
+			?>
+			<script src = "jquery-1.12.3.min.js"></script>
+			<script>
+			jQuery(document).ready(function($){
+			alert('Please Select an Item','Error');
+			});
+			</script>
+			<?php
+		}
 	}
 }
 /**
@@ -96,6 +106,7 @@ function displayVideo($conn){
 			echo "</table>";
 			++$counter;
 		}
+	
 	}
 	//used to be isbnArr
 	//creative here this the problem

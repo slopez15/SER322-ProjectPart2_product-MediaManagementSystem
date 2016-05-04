@@ -4,8 +4,8 @@
 	$password = 'pleaseconnect123';
 	$dbName = 'shoppingcart12';
 	$port = 3306;
-	$conn=mysqli_connect($host, $user, $password, $dbName);
-	if(mysqli_connect_errno()){
+	$conn = new mysqli($host, $user, $password, $dbName);
+	if($conn->connect_error){
 			die("Connection Failed! " . mysqli_connect_error());
 	}
 	else{
@@ -15,11 +15,9 @@
 	mysqli_close($conn);
 
 	function displayVideo($conn){
-		$sql="SELECT * FROM orders, customer";
-		$res=mysqli_query($conn,$sql);
-		if(!$res){
-			die("Query Failed!");
-		}
+		$sql="SELECT * FROM orders, customer ";
+		$res=$conn->query($sql);
+		if($res->num_rows > 0){
 		while ($row=mysqli_fetch_assoc($res)) {
 				echo "<table border=1>
 				<tr>
@@ -48,5 +46,6 @@
 				echo "<br>";
 		}
 		mysqli_free_result($res);
+	}
 	}
 ?>

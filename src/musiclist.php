@@ -28,8 +28,11 @@ function handleEvent($arr){
 		}
 		else{
 			?>
-			<script src = "text/javascript">
-			alert('Nothing has been Selected!');
+			<script src = "jquery-1.12.3.min.js"></script>
+			<script>
+			jQuery(document).ready(function($){
+			alert('Please Select an Item','Error');
+			});
 			</script>
 			<?php
 		}
