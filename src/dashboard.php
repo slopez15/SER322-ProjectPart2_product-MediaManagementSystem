@@ -43,10 +43,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Online Store</a>
+          <a class="navbar-brand" href="dashboard.php">Team 10</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
+            <li><a href="settings.php">Settings</a></li>
             <li><a href="dashboard.php">Dashboard</a></li>
           </ul>
         </div>
@@ -57,9 +58,10 @@
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="dashboard.php">Dashboard</a></li>
+            <li class="active"><a href="dashboard.php">Dashboard</a></li><br>
             <li><a href="orders.php">View Orders<span class="sr-only">(current)</span></a></li>
-            <li><a href="inv.php">View Inventory</a></li>
+            <li><a href="inv.php">View Inventory</a></li><br>
+
             <li><a href="add.php">Add to Inventory</a></li>
             <li><a href="delete.php">Delete Inventory</a></li>
           </ul>
@@ -71,27 +73,27 @@
             <div class="col-xs-6 col-sm-3 placeholder">
               <img src="http://piano-play.com/tax.png" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail" onclick="location.href='orders.php'">
               <h4>Orders</h4>
-              <span class="text-muted">All Orders</span>
+              <span class="text-muted">All Orders</span><br>
               <input type="button" class="btn" onclick="location.href='orders.php'" value="Show">
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
               <img src="http://www.clker.com/cliparts/t/B/a/6/6/E/add-button-md.png" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
               <h4>Add</h4>
-              <span class="text-muted">Add to Inventory</span>
+              <span class="text-muted">Add to Inventory</span><br>
                             <input type="button" class="btn" onclick="location.href='add.php'" value="Show">
 
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
               <img src="http://www.clker.com/cliparts/F/b/Y/s/V/A/delete-record-md.png" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
               <h4>Delete</h4>
-              <span class="text-muted">Delete Inventory</span>
+              <span class="text-muted">Delete from Inventory</span><br>
                             <input type="button" class="btn" onclick="location.href='delete.php'" value="Show">
 
             </div>
             <div class="col-xs-6 col-sm-3 placeholder">
               <img src="http://juvotec.com/wp-content/uploads/2015/03/inventory.png" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
               <h4>View</h4>
-              <span class="text-muted">View Inventory</span>
+              <span class="text-muted">View Inventory</span><br>
                             <input type="button" class="btn" onclick="location.href='inv.php'" value="Show">
 
             </div>
