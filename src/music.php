@@ -94,7 +94,21 @@
               <p>This is the music collection page</p>
               <hr>
               <h3>Music list</h3>
+			  <script type = "text/javascript" src = "jquery-1.12.3.min.js">
+				
+					function Event(){
+						$.ajax({
+							type: 'POST'
+							url: 'musiclist.php',
+							success : function("Sucess"){
+								alert("Sucess");
+							}
+						});
+					}
+			  
+			  </script>
               <?php include 'musiclist.php';?>
+			  <input type = "submit" name = "submit" value = "Purchase">
             </div>
             <div class="col-sm-2 sidenav">
               <div class="well">
