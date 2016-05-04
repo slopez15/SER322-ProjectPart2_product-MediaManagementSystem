@@ -1,21 +1,29 @@
 <?php
 function handleEvent($arr){
-	//create an array with all the ISBN
-	//problem is when submit button is called this needs to be called
-	//echo 'Functioned Called';
+	
 	if(isset($_POST['submit'])){
 		
 		if(isset($_POST['videolist'])){
 		
-		$result = $_POST['videolist'];//contains all that have been checked right?
-		//contains 
+		$result = $_POST['videolist'];
+	
 		if(!empty($result)){
 			
 			$count = count($result);
 			foreach($_POST['videolist'] as $selected){
 				
 				DelQuery($selected);
+				addToOrder($selected);
 			}
+			?>
+			<script src = "jquery-1.12.3.min.js"></script>
+			<script>
+			jQuery(document).ready(function($){
+			alert('Checkout succesfull');
+			});
+			</script>
+			<?php
+			
 		}	
 		}
 		else{
@@ -52,7 +60,27 @@ function DelQuery($ISBN){
 	$result = $conn->query($query);
 	$conn->close();
 }
+/*
+*Creates an order and adds it to Orders
+*
+**/
+function addToOrder($ISBN){
+	$host = '127.0.0.1:3306';
+	$user = 'root';
+	$password = 'pleaseconnect123';
+	$dbName = 'shoppingcart12';
+	$port = 3306;
 
+	$conn = new mysqli($host,$user,$password,$dbName);
+
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	}
+	
+	$query = "INSERT INTO orders Values (DEFAULT,CURDATE(),1234,$ISBN)";
+	$result = $conn->query($query);
+	$conn->close();
+}
 
 $host = '127.0.0.1:3306';
 $user = 'root';
