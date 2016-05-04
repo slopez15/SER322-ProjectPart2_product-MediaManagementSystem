@@ -19,6 +19,13 @@ SET time_zone = "+00:00";
 --
 -- Database: `shoppingcart12`
 --
+-- --------------------------------------------------------
+SHOW ENGINE INNODB STATUS;
+Drop DATABASE IF EXISTS shoppingcart12; 
+CREATE DATABASE shoppingcart12;
+USE shoppingcart12;
+
+
 
 -- --------------------------------------------------------
 
@@ -96,6 +103,31 @@ INSERT INTO `favorites` (`FavID`, `ISBN`, `CID`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `logininformation`
+--
+
+CREATE TABLE IF NOT EXISTS `logininformation` (
+  `Username` varchar(45) NOT NULL,
+  `Password` varchar(45) NOT NULL,
+  `CID` int(11) NOT NULL UNIQUE,
+  PRIMARY KEY (`Username`),
+  FOREIGN KEY (`CID`) REFERENCES `customer` (`CID`)
+);
+
+--
+-- Dumping data for table `logininformation`
+--
+
+INSERT INTO `logininformation` (`Username`, `Password`, `CID`) VALUES
+('saul123', 'sauceman', 1),
+('mike666', 'master', 12),
+('talabhh', 'bossMan', 69),
+('fido2', 'f', 123),
+('fido@yum.com', 'f', 1234);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `mediadescription`
 --
 
@@ -150,6 +182,8 @@ INSERT INTO `orders` (`OrderID`, `Date`, `CID`) VALUES
 (4, '2016-09-08', 1234),
 (5, '2016-09-08', 1234),
 (6, '2016-01-09', 1234);
+
+-- ---------------------------------------------------------
 
 --
 -- Constraints for dumped tables
