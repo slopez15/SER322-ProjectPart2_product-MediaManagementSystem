@@ -5,17 +5,16 @@
 function handleEvent($arr){
 	//create an array with all the ISBN
 	//problem is when submit button is called this needs to be called
-	echo 'Functioned Called';
+	//echo 'Functioned Called';
 	if(isset($_POST['submit'])){
-		echo 'in button';
 		
+		if(isset($_POST['musiclist'])){
 		$result = $_POST['musiclist'];//contains all that have been checked right?
 		//contains 
 		if(!empty($result)){
 			echo 'we in';
 			$count = count($result);
 			foreach($_POST['musiclist'] as $selected){
-				echo $selected . "<br>";
 				DelQuery($selected);
 			}
 		}	
@@ -26,8 +25,20 @@ function handleEvent($arr){
 			DelQuery($arr[$y],$conn);
 		}
 		*/
+		}
+		else{
+			?>
+			<script src = "text/javascript">
+			alert('Nothing has been Selected!');
+			</script>
+			<?php
+		}
 	}
 }
+/**
+*Deletes a digitalMedia from the Library using
+*ISBN as a key 
+**/
 
 function DelQuery($ISBN){
 
@@ -37,20 +48,14 @@ function DelQuery($ISBN){
 	$dbName = 'shoppingcart12';
 	$port = 3306;
 
-	$conn = mysql_connect($host,$user,$password,$dbName);
+	$conn = new mysqli($host,$user,$password,$dbName);
 
 	if ($conn->connect_error) {
 		die("Connection failed: " . $conn->connect_error);
 	} 
 	$query = "DELETE FROM digitallibrary WHERE ISBN = $ISBN";
-	echo $query;
-	
-	$result = mysql_query($query,$conn);
-	
-	if(!$result){
-		die("Could not delete data" . mysql_error());
-	}
-	mysql_close($conn);
+	$result = $conn->query($query);
+	$conn->close();
 }
 
 $host = '127.0.0.1:3306';
@@ -70,7 +75,6 @@ $conn->close();
 
 function displayVideo($conn){
 	$sql = "SELECT * FROM mediadescription WHERE Type = 'Music'";//changed from digitalLibrary
-	echo $sql;
 	$result = $conn->query($sql);
 	$counter = 0;
 	if($result->num_rows > 0){
