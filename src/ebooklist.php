@@ -1,9 +1,6 @@
 <?php
 
 require("mysqli_connect.php");
-handleEvent(displayVideo($conn));
-$conn->close();
-
 
 function handleEvent($arr){
 	
