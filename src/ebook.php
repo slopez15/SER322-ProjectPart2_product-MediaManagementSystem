@@ -57,7 +57,7 @@
           <ul class="nav navbar-nav">
             <li><a href="index.php">Home</a></li>
             <li><a href="about.php">About</a></li>
-            <li><a href="#">Orders</a></li>
+            <li><a href="orders.php">Orders</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
@@ -70,46 +70,49 @@
       <div class="row content">
         <div class="col-sm-2 sidenav">
           <div class="filters">
-                <br><br>
-                <h1>Filters</h1>
-                <a class="btn btn-default btn-lg" href="#">Less than $10</a>
-                <a class="btn btn-default btn-lg" href="#">More than $10</a>
-                <br><br>
-                <div class="dropdown">
-                  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                  Category
-                  <span class="caret"></span>
-                  </button>
-                  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <li><a href="music.php">Music</a></li>
-                    <li><a href="video.php">Video</a></li>
-                    <li><a href="ebook.php">Ebook</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-8 text-left">
-              <h1>Ebook</h1>
-              <p>This is the ebook collection page</p>
-              <hr>
-              <h3>ebook list</h3>
-              <?php include 'ebooklist.php';?>
-            </div>
-            <div class="col-sm-2 sidenav">
-              <div class="well">
-                <p>Search</p>
-                <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Search for...">
-                  <span class="input-group-btn">
-                    <button class="btn btn-default" type="button">Go!</button>
-                  </span>
-                </div>
-              </div>
+            <br><br>
+            <h1>Filters</h1>
+            <button
+            type="button" class="btn btn-default btn-lg"
+            href="#">Less than $10
+            </button>
+            <a class="btn btn-default btn-lg" href="#">More than $10</a>
+            <br><br>
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Category
+              <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="music.php">Music</a></li>
+                <li><a href="video.php">Video</a></li>
+ebook
+              </ul>
             </div>
           </div>
         </div>
-        <footer class="container-fluid text-center">
-          <p>Copyright 2016 Online Store</p>
-        </footer>
-      </body>
-    </html>
+        <div class="col-sm-8 text-left">
+          <h1>Ebook</h1>
+          <p>This is the ebook collection page</p>
+          <hr>
+          <h3>ebook list</h3>
+          <?php include 'ebooklist.php';?>
+        </div>
+        <div class="col-sm-2 sidenav">
+          <div class="well">
+            <p>Search</p>
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search for...">
+              <span class="input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="container-fluid text-center">
+      <p>Copyright 2016 Online Store</p>
+    </footer>
+  </body>
+</html>
