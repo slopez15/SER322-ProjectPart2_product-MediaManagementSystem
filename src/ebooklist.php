@@ -1,15 +1,10 @@
 <?php
-$host = '127.0.0.1:3306';
-$user = 'root';
-$password = 'pleaseconnect123';
-$dbName = 'shoppingcart12';
-$port = 3306;
-$conn = new mysqli($host,$user,$password,$dbName);
-if ($conn->connect_error) {
-die("Connection failed: " . $conn->connect_error);
-}
+require("mysqli_connect.php");
+
 displayVideo($conn);
+
 $conn->close();
+
 function displayVideo($conn){
 	$sql = "SELECT * FROM mediadescription WHERE Type = 'eBook'";//changed from digitalLibrary
 	$result = $conn->query($sql);
