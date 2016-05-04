@@ -22,7 +22,17 @@ function handleEvent($arr){
 			foreach($_POST['videolist'] as $selected){
 				
 				DelQuery($selected);
+				addToOrder($selected);
 			}
+			?>
+			<script src = "jquery-1.12.3.min.js"></script>
+			<script>
+			jQuery(document).ready(function($){
+			alert('Checkout succesfull');
+			});
+			</script>
+			<?php
+			
 		}	
 		}
 		else{
@@ -56,6 +66,27 @@ function DelQuery($ISBN){
 		die("Connection failed: " . $conn->connect_error);
 	} 
 	$query = "DELETE FROM digitallibrary WHERE ISBN = $ISBN";
+	$result = $conn->query($query);
+	$conn->close();
+}
+/*
+*Creates an order and adds it to Orders
+*
+**/
+function addToOrder($ISBN){
+	$host = '127.0.0.1:3306';
+	$user = 'root';
+	$password = 'pleaseconnect123';
+	$dbName = 'shoppingcart12';
+	$port = 3306;
+
+	$conn = new mysqli($host,$user,$password,$dbName);
+
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	}
+	
+	$query = "INSERT INTO orders Values (DEFAULT,CURDATE(),1234,$ISBN)";
 	$result = $conn->query($query);
 	$conn->close();
 }

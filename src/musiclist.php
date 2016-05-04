@@ -54,8 +54,6 @@ function displayVideo($conn){
 				echo "<td>" . $row['Author'] . "</td>";
 				echo "<td>" . $row['Cost'] . "</td>";
 			echo "</tr>";
-			?>
-			<?php
 			echo "</table>";
 			++$counter;
 		}
@@ -80,15 +78,18 @@ function handleEvent($arr){
 			$count = count($result);
 			foreach($_POST['musiclist'] as $selected){
 				DelQuery($selected);
+				addToOrder($selected);
 			}
+			?>
+			<script src = "jquery-1.12.3.min.js"></script>
+			<script>
+			jQuery(document).ready(function($){
+			alert('Checkout succesfull');
+			});
+			</script>
+			<?php
+			
 		}	
-		/*
-		$arrSize = count($arr);
-		for($y = 0; $y < $arrSize; $y++){
-			echo $arr[$y] . "<br>";
-			DelQuery($arr[$y],$conn);
-		}
-		*/
 		}
 		else{
 			?>
@@ -111,6 +112,27 @@ function DelQuery($UFC){
 	$result = $conn->query($query);
 	$conn->close();
 }
+/*
+*Creates an order and adds it to Orders
+*
+**/
+function addToOrder($ISBN){
+	$host = '127.0.0.1:3306';
+	$user = 'root';
+	$password = 'pleaseconnect123';
+	$dbName = 'shoppingcart12';
+	$port = 3306;
 
+	$conn = new mysqli($host,$user,$password,$dbName);
 
+	if ($conn->connect_error) {
+		die("Connection failed: " . $conn->connect_error);
+	}
+	
+	$query = "INSERT INTO orders Values (DEFAULT,CURDATE(),1234,$ISBN)";
+	$result = $conn->query($query);
+	$conn->close();
+}
 ?>
+
+
