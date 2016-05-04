@@ -1,4 +1,10 @@
 <?php
+
+require("mysqli_connect.php");
+handleEvent(displayVideo($conn));
+$conn->close();
+
+
 function handleEvent($arr){
 	
 	if(isset($_POST['submit'])){
@@ -93,6 +99,7 @@ die("Connection failed: " . $conn->connect_error);
 }
 handleEvent(displayVideo($conn));
 $conn->close();
+
 function displayVideo($conn){
 	$sql = "SELECT * FROM mediadescription WHERE Type = 'eBook'";//changed from digitalLibrary
 	$result = $conn->query($sql);
