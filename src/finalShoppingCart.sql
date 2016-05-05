@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 03, 2016 at 09:09 PM
+-- Generation Time: May 05, 2016 at 02:17 AM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -19,19 +19,15 @@ SET time_zone = "+00:00";
 --
 -- Database: `shoppingcart12`
 --
--- --------------------------------------------------------
-SHOW ENGINE INNODB STATUS;
-Drop DATABASE IF EXISTS shoppingcart12; 
-CREATE DATABASE shoppingcart12;
-USE shoppingcart12;
-
-
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `customer`
 --
+
+CREATE DATABASE shoppingCart12;
+USE shoppingCart12;
 
 CREATE TABLE IF NOT EXISTS `customer` (
   `CID` int(11) NOT NULL AUTO_INCREMENT,
@@ -73,10 +69,32 @@ CREATE TABLE IF NOT EXISTS `digitallibrary` (
 
 INSERT INTO `digitallibrary` (`UFC`, `ISBN`) VALUES
 (1, 0),
+(10, 0),
+(12, 0),
+(15, 0),
+(25, 0),
 (2, 1),
+(13, 1),
+(16, 1),
+(18, 1),
+(26, 1),
+(28, 1),
 (3, 12),
+(17, 12),
+(27, 12),
 (4, 123),
-(8, 1234);
+(19, 123),
+(29, 123),
+(20, 653),
+(30, 653),
+(21, 897),
+(31, 897),
+(9, 991),
+(22, 991),
+(23, 5567),
+(33, 5567),
+(24, 12345),
+(34, 12345);
 
 -- --------------------------------------------------------
 
@@ -109,21 +127,20 @@ INSERT INTO `favorites` (`FavID`, `ISBN`, `CID`) VALUES
 CREATE TABLE IF NOT EXISTS `logininformation` (
   `Username` varchar(45) NOT NULL,
   `Password` varchar(45) NOT NULL,
-  `CID` int(11) NOT NULL UNIQUE,
+  `CID` int(11) NOT NULL,
   PRIMARY KEY (`Username`),
-  FOREIGN KEY (`CID`) REFERENCES `customer` (`CID`)
-);
+  UNIQUE KEY `CID` (`CID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `logininformation`
 --
 
 INSERT INTO `logininformation` (`Username`, `Password`, `CID`) VALUES
-('saul123', 'sauceman', 1),
-('mike666', 'master', 12),
-('talabhh', 'bossMan', 69),
 ('fido2', 'f', 123),
-('fido@yum.com', 'f', 1234);
+('fido@yum.com', 'f', 1234),
+('mike', 'master', 12),
+('saul', 'sauceman', 1);
 
 -- --------------------------------------------------------
 
@@ -154,6 +171,7 @@ INSERT INTO `mediadescription` (`ISBN`, `Title`, `Type`, `Category`, `Year`, `Au
 (653, 'How to lose Wieght in 1 min', 'eBook', 'LifeStyle', 2010, 'Doug Schrodinger', '19.99'),
 (897, 'Enter Sandman', 'Music', 'Metal', 1991, 'Metallica', '0.99'),
 (991, 'PainKiller', 'Music', 'Metal', 1984, 'Judas Priest', '0.99'),
+(999, 'The Life of Pi', 'Video', 'Drama', 2012, 'Ang Lee', '19.99'),
 (5567, 'Jurassic Park', 'Video', 'Action', 1994, 'Steven Speilsperg', '9.99'),
 (12345, 'Terminator 3', 'Video', 'Action', 2000, 'James Cameroon', '9.99');
 
@@ -167,23 +185,26 @@ CREATE TABLE IF NOT EXISTS `orders` (
   `OrderID` int(11) NOT NULL AUTO_INCREMENT,
   `Date` date DEFAULT NULL,
   `CID` int(11) NOT NULL,
+  `ISBN` int(11) NOT NULL,
   PRIMARY KEY (`OrderID`),
-  KEY `CID` (`CID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+  KEY `CID` (`CID`),
+  KEY `ISBN` (`ISBN`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`OrderID`, `Date`, `CID`) VALUES
-(1, '2016-12-01', 1),
-(2, '2016-02-12', 12),
-(3, '2016-03-04', 123),
-(4, '2016-09-08', 1234),
-(5, '2016-09-08', 1234),
-(6, '2016-01-09', 1234);
-
--- ---------------------------------------------------------
+INSERT INTO `orders` (`OrderID`, `Date`, `CID`, `ISBN`) VALUES
+(1, '2016-12-01', 1, 0),
+(3, '2016-03-04', 123, 12),
+(4, '2016-09-08', 1234, 123),
+(5, '2016-09-08', 1234, 653),
+(6, '2016-01-09', 1234, 12345),
+(7, '2016-05-04', 1234, 897),
+(8, '2016-05-04', 1234, 653),
+(9, '2016-05-04', 1234, 2),
+(10, '2016-05-04', 1234, 66);
 
 --
 -- Constraints for dumped tables
@@ -193,14 +214,13 @@ INSERT INTO `orders` (`OrderID`, `Date`, `CID`) VALUES
 -- Constraints for table `favorites`
 --
 ALTER TABLE `favorites`
-  ADD CONSTRAINT `favorites_ibfk_1` FOREIGN KEY (`ISBN`) REFERENCES `mediadescription` (`ISBN`),
-  ADD CONSTRAINT `favorites_ibfk_2` FOREIGN KEY (`CID`) REFERENCES `customer` (`CID`);
+  ADD CONSTRAINT `favorites_ibfk_1` FOREIGN KEY (`ISBN`) REFERENCES `mediadescription` (`ISBN`);
 
 --
--- Constraints for table `orders`
+-- Constraints for table `logininformation`
 --
-ALTER TABLE `orders`
-  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`CID`) REFERENCES `customer` (`CID`);
+ALTER TABLE `logininformation`
+  ADD CONSTRAINT `logininformation_ibfk_1` FOREIGN KEY (`CID`) REFERENCES `customer` (`CID`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
