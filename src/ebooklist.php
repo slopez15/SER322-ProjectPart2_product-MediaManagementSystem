@@ -98,7 +98,9 @@ handleEvent(displayVideo($conn));
 $conn->close();
 
 function displayVideo($conn){
-	$sql = "SELECT * FROM mediadescription WHERE Type = 'eBook'";//changed from digitalLibrary
+	$sql = " SELECT * 
+		FROM mediadescription, digitallibrary 
+		WHERE Type = 'eBook' AND mediadescription.ISBN = digitallibrary.ISBN";//changed from digitalLibrary
 	$result = $conn->query($sql);
 	$counter = 0;
 	if($result->num_rows > 0){
@@ -109,6 +111,7 @@ function displayVideo($conn){
 			echo "<br>";
 			echo "<table border=1>
 			<tr>
+			<th>UFC</th>
 			<th>ISBN</th>
 			<th>Title</th>
 			<th>Type</th>
@@ -119,10 +122,11 @@ function displayVideo($conn){
 			</tr>";
 			?>
 			
-			<input type = "checkbox" name = "videolist[]" value = "<?php echo $row['ISBN'];?>">Add To Cart</input>
+			<input type = "checkbox" name = "videolist[]" value = "<?php echo $row['UFC'];?>">Add To Cart</input>
 			</form>
 			<?php
 			echo "<tr>";
+			echo "<td>" . $row['UFC'] . "</td>";
 			echo "<td>" . $row['ISBN'] . "</td>";
 			global $isbnArr;
 			$isbnArr[$counter] = $row['ISBN'];

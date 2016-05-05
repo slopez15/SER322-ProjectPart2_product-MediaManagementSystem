@@ -105,6 +105,7 @@
         </div>
       </div>
     </div>
+	<br>
     <footer class="container-fluid text-center">
       <p>Copyright 2016 Online Store</p>
     </footer>
