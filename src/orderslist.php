@@ -8,8 +8,9 @@ mysqli_close($conn);
 		//assuming that they are logged in 
 		//QUERY customer ISBN
 		//SELECT ISBN FROM mediadescription WHERE isbn = 
-		$sql = "SELECT * FROM orders Ord1, customer C1 WHERE Ord1.CID = 1234 AND C1.CID
-		= 1234";
+		//$sql = "SELECT * FROM orders Ord1, customer C1 WHERE Ord1.CID = 1234 AND C1.CID
+		//= 1234";
+		$query = "SELECT * FROM orders WHERE CID = 1234";
 		//$subquery = 
 		$res=$conn->query($sql);
 		if($res->num_rows > 0){

@@ -45,7 +45,6 @@ function displayVideo($conn){
 			echo "<tr>";
 				echo "<td>" . $row['UFC'] . "</td>";
 				echo "<td>" . $row['ISBN'] . "</td>";
-				global $isbnArr;
 				$isbnArr[$counter] = $row['UFC'];
 				echo "<td>" . $row['Title'] . "</td>";
 				echo "<td>" . $row['Type'] . "</td>";
@@ -58,12 +57,9 @@ function displayVideo($conn){
 			++$counter;
 		}
 	}
-	//used to be isbnArr
-	//creative here this the problem
 	return $isbnArr;
 }
 
-//global variable
 function handleEvent($arr){
 	//create an array with all the ISBN
 	//problem is when submit button is called this needs to be called
