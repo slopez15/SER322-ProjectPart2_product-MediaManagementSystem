@@ -33,9 +33,9 @@ mysqli_close($conn);
 				//echo "<td>" . $row['Middlename'] . "</td>";
 				//echo "<td>" . $row['LastName'] . "</td>";
 				//echo "<td>" . $row['Address'] . "</td>";
-				//echo "</tr>";
-				//echo "</table>";
-				//echo "<br>";
+				echo "</tr>";
+				echo "</table>";
+				echo "<br>";
 		}
 		mysqli_free_result($res);
 	}

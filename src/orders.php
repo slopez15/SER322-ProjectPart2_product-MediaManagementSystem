@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <title>Orders</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <meta charset="utf-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></link>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <style>
@@ -57,7 +57,7 @@
           <a class="navbar-brand" href="index.php">Team 10</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav"/>
             <li><a href="index.php">Home</a></li>
             <li><a href="about.php">About</a></li>
             <li class="active"><a href="orders.php">Orders</a></li>
@@ -72,7 +72,7 @@
     <div class="container-fluid text-center">
       <div class="row content">
         <div class="col-sm-2 sidenav">
-            <h1>Filters</h1>
+          <h1>Filters</h1>
           <div class="dropdown">
             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> Category
             <span class="caret"></span>
@@ -92,11 +92,11 @@
           <p>List of Customers and Orders available</p>
           <?php include 'orderslist.php';?>
         </div>
-        <div class="col-sm-2 sidenav">
+        <div class="col-sm-2 sidenav" height=100%>
           <div class="well">
             <p>Search</p>
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Search for...">
+              <input type="text" class="form-control" placeholder="Search for..."></input>
               <span class="input-group-btn">
                 <button class="btn btn-default" type="button">Go!</button>
               </span>
@@ -105,9 +105,8 @@
         </div>
       </div>
     </div>
-	<br>
-    <footer class="container-fluid text-center">
-      <p>Copyright 2016 Online Store</p>
-    </footer>
   </body>
+  <footer class="container-fluid text-center">
+    <p>Copyright 2016 Online Store</p>
+  </footer>
 </html>
