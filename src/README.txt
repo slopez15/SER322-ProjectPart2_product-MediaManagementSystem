@@ -1,8 +1,8 @@
 Contributors: Michael Zaragoza Saul Lopez Talab Hussein 
 Roles: 
-Talab Hussein - Front-End(HTML,CSS,JS)
+Talab Hussein - HTML, CSS, JS, PHP, ER Modeling
 Saul Lopez - Database,PHP(Refined Database and PHP code, and updated ER diagram)
-Michael Zaragoza -  Database,PHP(Created Database,Shopping Cart,and Misc PHP functions)
+Michael Zaragoza -  ER modeling, Database,PHP(Created Database,Shopping Cart,and Misc PHP functions)
 
 Github URL for Evidence
 https://github.com/TalabH/WebApp-MediaManagementSystem
