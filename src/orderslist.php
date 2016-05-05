@@ -12,7 +12,7 @@ mysqli_close($conn);
 		//= 1234";
 		$query = "SELECT * FROM orders WHERE CID = 1234";
 		//$subquery = 
-		$res=$conn->query($sql);
+		$res=$conn->query($query);
 		if($res->num_rows > 0){
 		while ($row=mysqli_fetch_assoc($res)) {
 				echo "<table border=1>
@@ -21,27 +21,21 @@ mysqli_close($conn);
 				<th>Date</th>
 				<th>CID</th>
 				<th>ISBN</th>
-				<th>Email</th>
-				<th>PhoneNumber</th>
-				<th>FirstName</th>
-				<th>Middlename</th>
-				<th>LastName</th>
-				<th>Address</th>
 				</tr>";
 				echo "<tr>";
 				echo "<td>" . $row['OrderID'] . "</td>";
 				echo "<td>" . $row['Date'] . "</td>";
 				echo "<td>" . $row['CID'] . "</td>";
 				echo "<td>" . $row['ISBN'] . "</td>";
-				echo "<td>" . $row['Email'] . "</td>";
-				echo "<td>" . $row['PhoneNumber'] . "</td>";
-				echo "<td>" . $row['FirstName'] . "</td>";
-				echo "<td>" . $row['Middlename'] . "</td>";
-				echo "<td>" . $row['LastName'] . "</td>";
-				echo "<td>" . $row['Address'] . "</td>";
-				echo "</tr>";
-				echo "</table>";
-				echo "<br>";
+				//echo "<td>" . $row['Email'] . "</td>";
+				//echo "<td>" . $row['PhoneNumber'] . "</td>";
+				//echo "<td>" . $row['FirstName'] . "</td>";
+				//echo "<td>" . $row['Middlename'] . "</td>";
+				//echo "<td>" . $row['LastName'] . "</td>";
+				//echo "<td>" . $row['Address'] . "</td>";
+				//echo "</tr>";
+				//echo "</table>";
+				//echo "<br>";
 		}
 		mysqli_free_result($res);
 	}
